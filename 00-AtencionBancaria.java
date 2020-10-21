@@ -36,11 +36,15 @@ public class Main {
     public static void main(String[] args) {
         //Horario de atención
         //inicio
-        int hi = 10;
-        int mi = 30;
+        final int hi = 10;
+        final int mi = 30;
         //fin
-        int hf = 12;
-        int mf = 15;
+        final int hf = 12;
+        final int mf = 15;
+        
+        //total
+        final int ti = hi * 60 + mi;
+        final int tf = hf * 60 + mf;
 
         System.out.printf("Horario de atención: %n Inicio: %d:%d h %n Fin: "
                 + "%d:%d h %n", hi, mi, hf, mf);
@@ -72,11 +76,12 @@ public class Main {
         }
 
         int te = ht * 60 + mt;
-        System.out.printf("Hora introducida: %02d:%02dh%n", ht, mt);
+        System.out.printf("Hora de usuario: %02d:%02dh%n", ht, mt);
         System.out.printf("%s%n",
-                hi <= te && te <= hf
+                ti <= te && te <= tf
                         ? "Sí. Atencion disponible"
                         : "No. Atencion no disponible");
+       
 
         System.out.println("**********");
 
@@ -94,7 +99,7 @@ public class Main {
         System.out.printf("Hora aleatoria: %02d:%02dh%n", hr, mr);
         int hrt = hr * 60 + mr;
         System.out.printf("%s%n",
-                hi <= hrt && hrt <= hf
+                ti <= hrt && hrt <= tf
                         ? "Sí. Atencion disponible"
                         : "No. Atencion no disponible");
 
@@ -103,11 +108,10 @@ public class Main {
         //Hora sistema
         int hs = CAL.get(Calendar.HOUR);
         int ms = CAL.get(Calendar.MINUTE);
-
         System.out.printf("Hora del sistema: %02d:%02dh%n", hs, ms);
         int ts = hs * 60 + ms;
         System.out.printf("%s%n",
-                hi <= ts && ts <= hf
+                ti <= ts && ts <= tf
                         ? "Sí. Atencion disponible"
                         : "No. Atencion no disponible");
     }

@@ -1,8 +1,7 @@
-Proyecto: AtencionBancaria
-
+AtencionBancaria
 
 Inicio: 10:30 H |
-		            |  Horario atención bancaria
+                |  Horario atención bancaria
 Fin: 12:15H     |
 
 
